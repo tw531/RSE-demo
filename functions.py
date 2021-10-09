@@ -156,7 +156,7 @@ def Update_Hrent(Input, LT,ZNum,Wage,HSExpShare,Hrent0,HS):
 # In[5]:
 
 
-def Calibrate_ZAttr(D,LLCoefIJ,Lambda,Time,HS,BFS,Hrent, LT,ZNum):
+def Calibrate_ZAttr(D,LLCoefIJ,Lambda,Time,HS,BFS,Hrent, LT,ZNum,Tol):
     
     # Initial data input (to be replaced with Excel input)
     ProbIJ_T1 = np.array([[0.2,0.1,0.05],
@@ -221,7 +221,7 @@ def Calibrate_ZAttr(D,LLCoefIJ,Lambda,Time,HS,BFS,Hrent, LT,ZNum):
         return Error_ZAttrI,Error_ZAttrIJ
     
     
-    Error_ZAttrI,Error_ZAttrIJ = Verify_ZAttr(Lambda,HS,BFS,Hrent,TravDisu_LL,ProbIJ_T,ProbI_T,ZAttrI,ZAttrIJ)
+    Error_ZAttrI,Error_ZAttrIJ = Verify_ZAttr(Lambda,HS,BFS,Hrent,TravDisu_LL,ProbIJ_T,ProbI_T,ZAttrI,ZAttrIJ, LT,ZNum)
     if (Error_ZAttrI < Tol) & (Error_ZAttrIJ < Tol):
         print('--------------------- ZATTR Calibration Complete --------------------')
     else:

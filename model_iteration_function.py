@@ -6,6 +6,7 @@
 
 import time
 import numpy as np
+import scipy.io as sio
 
 
 # In[2]:
@@ -48,6 +49,9 @@ def model_iteration(Tol,Status_HrentPred,Status_Mode,Status_EmpPred,Time1,EmpSeC
     # (cuz this function needs ZNum variable as well, I put it after generating ZNum variable? Otherwise cannot run actually..)
 
     
+    
+    
+    
     ### Model Iteration
     from functions import ProbIJ_Mix, Update_Hrent, Calibrate_ZAttr
 
@@ -79,7 +83,7 @@ def model_iteration(Tol,Status_HrentPred,Status_Mode,Status_EmpPred,Time1,EmpSeC
 
     if Status_Mode == 1:
         print('---------------------- ZATTR Calibration start ----------------------')
-        ZAttrIJ,ZAttrI = Calibrate_ZAttr(D,LLCoefIJ,Lambda,Time,HS,BFS,Hrent,LT,ZNum)
+        ZAttrIJ,ZAttrI = Calibrate_ZAttr(D,LLCoefIJ,Lambda,Time,HS,BFS,Hrent,LT,ZNum,Tol)
         sio.savemat('ZAT(Python).mat', {'ZAttrIJ':ZAttrIJ, 'ZAttrI':ZAttrI})
 
     print("Elapsed time is: %.4f seconds" % (time.time() - start_time)) 
