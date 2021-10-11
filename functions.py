@@ -262,8 +262,9 @@ def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol)
         HrentPredMode = ['HOUSE RENTS PREDICTION: DISABLED'];
 
 
-    Metadata = [Project,Date,Author,Precision,ModelMode,EmpPredMode,HrentPredMode]
-    MetadataT = pd.DataFrame(data = Metadata)
+    Metadata = [Project,Date,Precision,ModelMode,EmpPredMode,HrentPredMode]
+    Metadata_author = [Project,Date,Author,Precision,ModelMode,EmpPredMode,HrentPredMode]
+    MetadataT = pd.DataFrame(data = Metadata_author)
     #Matlab: Output.Metadata = MetadataT  #save in the output construct, check later. 
     
     
