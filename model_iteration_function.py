@@ -12,14 +12,7 @@ import scipy.io as sio
 # In[2]:
 
 
-def model_iteration(Tol,Status_HrentPred,Status_Mode,Status_EmpPred,Time1,EmpSeCTot,EmpSeC,HS,BFS,Hrent0,Wage,HSExpShare):
-    
-    ### Model Parameters
-    MaxITN = 5000         # max iteration times
-    LLCoefIJ = np.array([[0.0,0.0]]) # log-linear transformation coef
-    D = 250               # number of working days
-    Lambda = np.array([[1.0,1.0]])  # dispersion parameter for location choice? (can't see those words after location)
-    LT = len(Lambda[0])   # number of labour type
+def model_iteration(Tol,Status_HrentPred,Status_Mode,Status_EmpPred,Time1,EmpSeCTot,EmpSeC,HS,BFS,Hrent0,Wage,HSExpShare,MaxITN,LLCoefIJ,D,Lambda,LT):
     
     ### Data Input
     # assuming same travel time for all SeCs

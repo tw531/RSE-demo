@@ -236,10 +236,10 @@ def Calibrate_ZAttr(D,LLCoefIJ,Lambda,Time,HS,BFS,Hrent, LT,ZNum,Tol):
 # In[6]:
 
 
-def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol):
+def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol,Project_Name):
     
     Date = ['DATE: ',pd.Timestamp.today()]     # change format later - currently they're in 2 columns
-    Project = ['PROJECT NAME: ProbIJ_Model_Test']
+    Project = ['PROJECT NAME: '+ Project_Name]
     Author = ['AUTHOR: DR LI WAN & MS TIANYUAN WANG | UNIVERSITY OF CAMBRIDGE']
     Precision = ['PRECISION: ',Tol]
 
@@ -284,6 +284,12 @@ def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol)
     T_Hrents = pd.DataFrame(Hrent, columns = ['Hrent'])
     
     
+    T_Hrents = T_Hrents.round(3)
+    T_EREW = T_EREW.round(1)
+    T_JobOppLatCat = T_JobOppLatCat.round(3)
+    T_Tran = T_Tran.round(3)
+    
+    
     T1 = pd.concat([T_Hrents, T_EREW, T_JobOppLatCat, T_Tran], axis=1)
     T1.columns = pd.MultiIndex.from_tuples([('Hrent', ''), ('ER', 'high income'), ('ER', 'low income'), ('EW', 'high income'), ('EW', 'low income'), 
                                             ('JobOpp','high income'),('JobOpp','low income'), ('LabCat','high income'),('LabCat','low income'),
@@ -321,6 +327,7 @@ def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol)
     T2.index = pd.MultiIndex.from_tuples([('high income', 'z1'), ('high income', 'z2'), ('high income', 'z3'),
                                           ('low income', 'z1'), ('low income', 'z2'), ('low income', 'z3'),
                                           ('all', 'z1'), ('all', 'z2'), ('all', 'z3')])
+    T2 = T2.round(1)
 
 
     # write to the excel file
