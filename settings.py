@@ -20,7 +20,7 @@ Status_HrentPred = 1  # 1: Endogenous house rents; 0: Exogenous house rents
 MaxITN = 10000         # max iteration times
 LLCoefIJ = np.array([[0.0,0.0]]) # log-linear transformation coef
 D = 250               # number of working days
-Lambda = np.array([[1.0,1.0]])  # dispersion parameter for location choice? (can't see those words after location)
+Lambda = np.array([[3.0,5.0]])  # dispersion parameter for location choice
 LT = len(Lambda[0])   # number of labour type
 
 

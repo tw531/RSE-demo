@@ -291,9 +291,9 @@ def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol,
     
     
     T1 = pd.concat([T_Hrents, T_EREW, T_JobOppLatCat, T_Tran], axis=1)
-    T1.columns = pd.MultiIndex.from_tuples([('Hrent', ''), ('ER', 'high income'), ('ER', 'low income'), ('EW', 'high income'), ('EW', 'low income'), 
-                                            ('JobOpp','high income'),('JobOpp','low income'), ('LabCat','high income'),('LabCat','low income'),
-                                            ('ACD','high income'),('ACD','low income'), ('ACT','high income'),('ACT','low income')])
+    T1.columns = pd.MultiIndex.from_tuples([('House rent', ''), ('Employed residents', 'high income'), ('Employed residents', 'low income'), ('Employed workers', 'high income'), ('Employed workers', 'low income'), 
+                                            ('Job opportunity','high income'),('Job opportunity','low income'), ('Labour catchment','high income'),('Labour catchment','low income'),
+                                            ('Average commuting distance','high income'),('Average commuting distance','low income'), ('Average commuting time','high income'),('Average commuting time','low income')])
     T1.index = ['z1','z2','z3']
 
 
