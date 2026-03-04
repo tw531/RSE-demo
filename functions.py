@@ -342,7 +342,7 @@ def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol,
 #     T_JobOppLatCat.to_excel(Filename, sheet_name='JobOpp_LabCat')
 #     T_Tran.to_excel(Filename, sheet_name='ACD_ACT') #drop index, do this later
 
-    Filename.save()
+    Filename.close()
     
     Output_summary = {'Metadata':Metadata,
                       'MetadataT':MetadataT,
