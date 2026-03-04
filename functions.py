@@ -133,6 +133,7 @@ def ProbIJ_Mix(Status_EmpPred,D,LLCoefIJ,Lambda,EmpInput,Time,Dist,HS,BFS,Hrent,
 #     return Output
 
 
+
 # In[4]:
 
 
@@ -342,6 +343,7 @@ def print_outputs (Status_Mode,Status_EmpPred,Status_HrentPred,Output,Hrent,Tol,
 #     T_JobOppLatCat.to_excel(Filename, sheet_name='JobOpp_LabCat')
 #     T_Tran.to_excel(Filename, sheet_name='ACD_ACT') #drop index, do this later
 
+#     Filename.save()
     Filename.close()
     
     Output_summary = {'Metadata':Metadata,
